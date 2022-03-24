@@ -46,7 +46,8 @@ If you see port error, change it in `start` script
 ## Telegram messages JSON-dump source
 
 - While this is a proof of concept, we put exported directory with dump in SvelteKit ./static dir
-- TODO: JSON-dump upload feature
+- See demo input JSON there: https://telegram-json-ui.netlify.app/example/telegram-test-json/result.json
+- See TODO: JSON-dump upload feature
 
 ## How to export Telegram chat
 
@@ -64,3 +65,35 @@ If you see port error, change it in `start` script
 - https://github.com/ruarxive
 
 
+## TODO
+
+### Search
+
+- [x] Search Messages with Plain Text
+- [x] Search by Author of Message or Action
+- [x] Search by Actions
+- [ ] Search beetween dates interval
+- [ ] Search with logical conditions
+
+### Render messages (chat UI)
+
+- [x] Display Messages in Plain Text
+- [x] Display Actions
+- [ ] Display Media: Stickers
+- [ ] Display Media: Images
+- [ ] Display Media: Video
+- [ ] Display Media: GIFs
+- [ ] Display Media: Files
+- [ ] Display Avatars of conversation members (users and bots)
+
+### MVP ready for production checklist
+
+- [ ] JSON-dump upload feature
+- [ ] Mobile-first & adaptive UI
+
+
+### Low-priority
+
+- [ ] Save fragment to JSON
+- [ ] Save fragment to HTML
+- [ ] Search index (?)
