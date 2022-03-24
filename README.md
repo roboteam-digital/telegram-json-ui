@@ -92,6 +92,10 @@ If you see port error, change it in `start` script
 - [ ] Mobile-first & adaptive UI
 
 
+### Dev
+
+- [ ] Don't make Netlify builds if no changes in SvelteKit dir
+
 ### Low-priority
 
 - [ ] Save fragment to JSON
