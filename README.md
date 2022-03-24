@@ -5,6 +5,8 @@ Web UI with search and navigation for Telegram chat / channel dump (export) from
 ## Demo
 
 - https://telegram-json-ui.netlify.app
+- See demo input JSON there: https://telegram-json-ui.netlify.app/example/telegram-test-json/result.json
+- And see as it originally rendered in HTML: https://telegram-json-ui.netlify.app/example/telegram-test-html/messages.html
 
 
 ## Stack
@@ -47,6 +49,7 @@ If you see port error, change it in `start` script
 
 - While this is a proof of concept, we put exported directory with dump in SvelteKit ./static dir
 - See demo input JSON there: https://telegram-json-ui.netlify.app/example/telegram-test-json/result.json
+- And see as it originally rendered in HTML: https://telegram-json-ui.netlify.app/example/telegram-test-html/messages.html
 - See TODO: JSON-dump upload feature
 
 ## How to export Telegram chat
@@ -91,6 +94,10 @@ If you see port error, change it in `start` script
 - [ ] JSON-dump upload feature
 - [ ] Mobile-first & adaptive UI
 
+
+### Dev
+
+- [ ] Don't make Netlify builds if no changes in SvelteKit dir
 
 ### Low-priority
 
