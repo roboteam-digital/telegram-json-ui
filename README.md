@@ -12,6 +12,11 @@ Web UI with search and navigation for Telegram chat / channel dump (export) from
 - [SvelteKit](https://kit.svelte.dev/)
 
 
+### Svelte components
+
+- `<VirtualList>` for fast rendering large message dumps
+
+
 ### Run for local dev or deploy for production
 
 - [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)
