@@ -5,7 +5,7 @@
 	// import items from '../lib/data.js';
 	import ListItem from '../lib/ListItem.svelte';
 
-	import data from '../../../example/telegram-test-json/result.json'
+	import data from '../../static/example/telegram-test-json/result.json'
 	
 	const get_messages = () => data.messages
 
