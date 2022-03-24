@@ -47,8 +47,18 @@
 
 	let start;
 	let end;
+
+	const input_json_url = 'https://telegram-json-ui.netlify.app/example/telegram-test-json/result.json'
+	const input_html_url = 'https://telegram-json-ui.netlify.app/example/telegram-test-html/messages.html'
 	
 </script>
+
+<div class="alert shadow-lg">
+	<ul>
+		<li>See demo input JSON there: <a target="_blank" class="link link-primary" href="{input_json_url}">result.json</a></li>
+		<li>And see as it originally rendered in HTML: <a target="_blank" class="link link-primary" href="{input_html_url}">messages.html</a></li>
+	</ul>
+</div>
 
 <div class="navbar bg-base-100">
 	<!-- <a class="btn btn-ghost normal-case text-xl">daisyUI</a> -->
