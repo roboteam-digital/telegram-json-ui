@@ -1,0 +1,8 @@
+#!/bin/bash
+
+app_name="telegram-json-ui"
+port="3000"
+
+./stop
+pm2 start "npm run dev -- --port $port --host" --name "$app_name"
+pm2 logs "$app_name"

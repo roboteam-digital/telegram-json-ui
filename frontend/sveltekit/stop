@@ -1,0 +1,5 @@
+#!/bin/bash
+
+app_name="telegram-json-ui"
+
+pm2 delete "$app_name"
