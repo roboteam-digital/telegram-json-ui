@@ -81,6 +81,7 @@ If you see port error, change it in `start` script
 ### Render messages (chat UI)
 
 - [x] Display Messages in Plain Text
+- [ ] Display Messages with [MarkdownV2](https://core.telegram.org/bots/api#markdownv2-style) formatting
 - [x] Display Actions
 - [ ] Display Media: Stickers
 - [ ] Display Media: Images
