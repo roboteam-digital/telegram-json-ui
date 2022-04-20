@@ -1,4 +1,5 @@
 <script>
+	export let date;
 	export let avatar;
 	export let from;
 	export let actor;
@@ -20,6 +21,7 @@
 </div> -->
 
 <div class='card'>
+	<h2>{date}</h2>
 	<div class="avatar">
 		<div class="w-16 rounded-full">
 		  <img src="{avatar}" alt="{from}" />
