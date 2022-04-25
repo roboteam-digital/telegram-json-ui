@@ -75,7 +75,7 @@ If you see port error, change it in `start` script
 - [x] Search Messages with Plain Text
 - [x] Search by Author of Message or Action
 - [x] Search by Actions
-- [ ] Search beetween dates interval
+- [x] Search beetween dates interval
 - [ ] Search with logical conditions
 
 ### Render messages (chat UI)
@@ -84,9 +84,9 @@ If you see port error, change it in `start` script
 - [ ] Display Messages with [MarkdownV2](https://core.telegram.org/bots/api#markdownv2-style) formatting
 - [x] Display Actions
 - [ ] Display Media: Stickers
-- [ ] Display Media: Images
-- [ ] Display Media: Video
-- [ ] Display Media: GIFs
+- [x] Display Media: Images
+- [x] Display Media: Video
+- [x] Display Media: GIFs
 - [ ] Display Media: Files
 - [ ] Display Avatars of conversation members (users and bots)
 
