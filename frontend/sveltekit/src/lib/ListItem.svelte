@@ -9,6 +9,7 @@
 	export let mime_type;
 	export let file;
 	export let thumbnail;
+	export let photo
 	let dir = '../../static/example/telegram-test-json/';
 </script>
 
@@ -36,6 +37,8 @@
 	<p>
 		{#if action}
 			<span>Action: <pre>{action}</pre></span>
+		{:else if photo}
+			<img src={dir+photo} type="image/jpg" alt="404">
 		{:else if mime_type}
 			<span>Media: <pre>{media_type}</pre></span>
 			{#if RegExp("video*").test(mime_type)}

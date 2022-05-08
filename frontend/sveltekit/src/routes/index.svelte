@@ -44,19 +44,21 @@
 	}
 
 	function dateFilter(lb, ub, d){
-		const DAY = 86400
-		return (Number.isNaN(lb) || d>=lb) && (Number.isNaN(ub) || d<=ub + DAY)
+		const DAY = 86400000
+		return (Number.isNaN(lb) || d>=lb) && (Number.isNaN(ub) || d<=ub+DAY)
 	}
 	
 	$: filteredList = messages.filter(item => {
 		const lower_case_search_term = searchTerm.toLowerCase()
 		let termFilterWithTerm = termFilter.bind(null, lower_case_search_term)
-		let dateFilterWithBounds = dateFilter.bind(null, Date.parse(lowerBoundDate), Date.parse(upperBoundDate))
+		let dateFilterWithBounds = dateFilter.bind(null,
+		 Date.parse(lowerBoundDate), 
+		 Date.parse(upperBoundDate))
 		return (termFilterWithTerm(item.from) ||
 				 termFilterWithTerm(item.actor) ||
 				 termFilterWithTerm(item.plain_text) ||
 				 termFilterWithTerm(item.action)) &&
-				 dateFilterWithBounds(Date.parse(item.date))
+				 dateFilterWithBounds(Date.parse(item.date+"Z"))
 	});
 
 	let start;
