@@ -5,6 +5,12 @@
 	export let action;
 	export let media_type;
 	export let plain_text;
+	export let date;
+	export let mime_type;
+	export let file;
+	export let thumbnail;
+	export let photo
+	let dir = '../../static/example/telegram-test-json/';
 </script>
 
 <!-- <div class="card bg-base-100 shadow-xl">
@@ -20,6 +26,7 @@
 </div> -->
 
 <div class='card'>
+	<span>{date}</span>
 	<div class="avatar">
 		<div class="w-16 rounded-full">
 		  <img src="{avatar}" alt="{from}" />
@@ -30,11 +37,30 @@
 	<p>
 		{#if action}
 			<span>Action: <pre>{action}</pre></span>
-		{:else if media_type}
+		{:else if photo}
+			<img src={dir+photo} type="image/jpg" alt="404">
+		{:else if mime_type}
 			<span>Media: <pre>{media_type}</pre></span>
-		{:else}
-			{@html plain_text.replace(/(?:\r\n|\r|\n)/g, '<br />')}			
+			{#if RegExp("video*").test(mime_type)}
+				<video controls>
+					<track kind="captions">
+					<source src={dir+file} type={mime_type}>
+				</video>
+			{:else if RegExp("audio*").test(mime_type)}
+				<audio controls>
+					<source src={dir+file} type={mime_type}>
+				</audio>
+			{:else if RegExp("image*").test(mime_type)}
+				<img src={dir+file} type={mime_type} alt="404">
+			{/if}
+		{:else if media_type=="sticker"}
+			<!-- <video >
+				<track kind="captions">
+				<source src={dir+file} type="video/tgs">
+			</video>	 -->
+			<img src={dir+thumbnail} alt="404">
 		{/if}
+		{@html plain_text.replace(/(?:\r\n|\r|\n)/g, '<br />')}		
 	</p>
 </div>
 

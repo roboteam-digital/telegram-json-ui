@@ -36,13 +36,29 @@
 	}))
 
 	let searchTerm = '';
+	let lowerBoundDate = '';
+	let upperBoundDate = '';
+
+	function termFilter(searchTerm, itemField){
+		return itemField    && itemField     .toLowerCase().indexOf(searchTerm) !== -1
+	}
+
+	function dateFilter(lb, ub, d){
+		const DAY = 86400000
+		return (Number.isNaN(lb) || d>=lb) && (Number.isNaN(ub) || d<=ub+DAY)
+	}
 	
 	$: filteredList = messages.filter(item => {
 		const lower_case_search_term = searchTerm.toLowerCase()
-		return item.from    && item.from      .toLowerCase().indexOf(lower_case_search_term) !== -1 ||
-			item.actor      && item.actor     .toLowerCase().indexOf(lower_case_search_term) !== -1 ||
-			item.plain_text && item.plain_text.toLowerCase().indexOf(lower_case_search_term) !== -1 ||
-			item.action     && item.action    .toLowerCase().indexOf(lower_case_search_term) !== -1
+		let termFilterWithTerm = termFilter.bind(null, lower_case_search_term)
+		let dateFilterWithBounds = dateFilter.bind(null,
+		 Date.parse(lowerBoundDate), 
+		 Date.parse(upperBoundDate))
+		return (termFilterWithTerm(item.from) ||
+				 termFilterWithTerm(item.actor) ||
+				 termFilterWithTerm(item.plain_text) ||
+				 termFilterWithTerm(item.action)) &&
+				 dateFilterWithBounds(Date.parse(item.date+"Z"))
 	});
 
 	let start;
@@ -62,13 +78,24 @@
 
 <div class="navbar bg-base-100">
 	<!-- <a class="btn btn-ghost normal-case text-xl">daisyUI</a> -->
+	<span>Chat:</span>
 	<span>Filter:</span>
 	<input
 	type="text"
 	placeholder="Search: Messages and Authors, Actions and Actors"
 	class="input input-bordered input-primary w-full max-w-xs"
 	bind:value={searchTerm}
->
+	>
+	<input
+	type="date"
+	class="input input-bordered input-primary w-full max-w-xs"
+	bind:value={lowerBoundDate}
+	>
+	<input
+	type="date"
+	class="input input-bordered input-primary w-full max-w-xs"
+	bind:value={upperBoundDate}
+	>
 
 </div>
 
